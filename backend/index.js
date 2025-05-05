@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 
 import userRoutes from "./routes/userRoutes.js";
 import leaveRoutes from "./routes/leaveRoutes.js"
+import holidayRoutes from "./routes/holidayRoutes.js"
 
 dotenv.config();
 
@@ -35,3 +36,4 @@ app.listen(6060, () => {
 //Routes
 app.use("/users", userRoutes);
 app.use("/leaves", leaveRoutes);
+app.use("/holidays", holidayRoutes)

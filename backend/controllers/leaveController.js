@@ -6,7 +6,7 @@ export const addLeave = async (req, res) => {
     const { leaveType, startDate, endDate, reason} =
       req.body;
 
-    const leaveDays = calcLeaveDates(new Date(startDate), new Date(endDate))
+    const leaveDays =await calcLeaveDates(new Date(startDate), new Date(endDate))
     const newLeave = new Leaves({
         employee: req.user.id, leaveType, startDate, endDate, reason, totalLeaveDays:leaveDays
     });
