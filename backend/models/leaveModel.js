@@ -38,18 +38,26 @@ const leaveSchema = new mongoose.Schema({
     },
     reviewedBy: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Employee'
+        ref: Users,
+        default: null
     },
     reviewComments: {
         type: String,
         trim: true,
-        maxlength: 500
+        maxlength: 500,
+        default: null
     },
     approvedBy: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User', // could be moderator/admin
+        ref: Users, // could be moderator/admin
         default: null
     },
+    adminComments: {
+        type: String,
+        trim: true,
+        maxlength: 500,
+        default: null
+    }
 });
 
 const Leaves = mongoose.model("Leaves", leaveSchema);

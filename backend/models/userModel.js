@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
         enum: ["admin", "moderator", "user"],
         default: 'user'
     },
+    totalAnnualLeaves: {
+        type: Number,
+        default: 0
+    },
     createdOn:{
         type: Date, default: new Date().getTime()
     }
